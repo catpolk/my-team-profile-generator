@@ -10,16 +10,16 @@ class Engineer  {
                 name: 'title',
                 message: 'Enter engineer name'
             },
-            {
-                type: 'input',
-                name: 'ID',
-                message: 'Enter engineer ID'
-            },
-            {
-                type: 'input',
-                name: 'git',
-                message: 'Enter Github username'
-            },
+            // {
+            //     type: 'input',
+            //     name: 'ID',
+            //     message: 'Enter engineer ID'
+            // },
+            // {
+            //     type: 'input',
+            //     name: 'git',
+            //     message: 'Enter Github username'
+            // },
         ]);
     }
 

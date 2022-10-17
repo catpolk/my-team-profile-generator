@@ -10,21 +10,21 @@ class Intern  {
                 name: 'title',
                 message: 'Provide name of your intern'
             },
-            {
-                type: 'input',
-                name: 'ID',
-                message: 'Enter intern\'s ID'
-            },
-            {
-                type: 'input',
-                name: 'email',
-                message: 'Enter intern\'s email address'
-            },
-            {
-                type: 'input',
-                name: 'school',
-                message: 'Enter intern\'s school'
-            },
+            // {
+            //     type: 'input',
+            //     name: 'ID',
+            //     message: 'Enter intern\'s ID'
+            // },
+            // {
+            //     type: 'input',
+            //     name: 'email',
+            //     message: 'Enter intern\'s email address'
+            // },
+            // {
+            //     type: 'input',
+            //     name: 'school',
+            //     message: 'Enter intern\'s school'
+            // },
             
         ]);
     }
