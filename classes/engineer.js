@@ -1,4 +1,4 @@
-
+const Employee = require('./employee')
 
 class Engineer  {
     answers;
