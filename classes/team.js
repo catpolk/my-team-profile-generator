@@ -10,7 +10,6 @@ class Team {
         this.manager = new Manager();
         this.enginners = [];
         this.interns = []; 
-        this.complete = false;
     }
     
     async build() {
@@ -37,7 +36,6 @@ class Team {
         await inquirer.prompt(this.questions()).then(async (response) => {
             // console.log(response);
             if (response.teamMember === 'Finish building team') {
-                this.complete = true;
                 return;
             }
             
@@ -56,7 +54,7 @@ class Team {
                 //prompting a user to answer intern questions 
             }
 
-            inquirer.prompt(this.questions()).then((response) => {
+            await inquirer.prompt(newTeamMember.questions()).then((response) => {
                 newTeamMember.saveAnswers(response);
                 // console.log(response);
                 //adding a newly created engineer object to an array of engineers
@@ -64,11 +62,9 @@ class Team {
                 // console.log(this.enginners);
                 // return this.buildTeamMembers();
             });
-            
-        })
-        if (this.complete !== true) {
+
             return this.buildTeamMembers();
-        }
+        })
 
         return;
     }
