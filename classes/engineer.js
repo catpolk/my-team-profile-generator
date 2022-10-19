@@ -1,8 +1,12 @@
 const Employee = require('./employee')
 
 class Engineer  {
-    answers;
-    
+    constructor (title, id, git){
+        this.title = title;
+        this.id = id;
+        this.git = git
+    }
+
     questions() {
         return ([ //returns questions
             {
@@ -26,7 +30,7 @@ class Engineer  {
     saveAnswers(ans) {
         this.answers = ans;
     }
-}
+} 
 
-
+//create a constructor 
 module.exports = Engineer;

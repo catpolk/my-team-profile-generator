@@ -10,6 +10,7 @@ class Team {
         this.manager = new Manager();
         this.enginners = [];
         this.interns = []; 
+        this.complete = false;
     }
     
     async build() {
@@ -17,23 +18,26 @@ class Team {
         await this.buildTeamMembers();
     }
 
-    buildManager(){
+    async buildManager(){
         //prompts questions for manager and saves them in save Answers 
-        return inquirer.prompt(this.manager.questions()).then((response) => {
+        await inquirer.prompt(this.manager.questions()).then((response) => {
             this.manager.saveAnswers(response);
             // resolve();
             // var fileContent = generateHTML(response);
             // writeToFile('generateHTML.js', fileContent)
             // console.log(this.manager.answers);
             // this.buildTeamMembers();
-        })
+        });
+
+        return;
     }
 
-    buildTeamMembers() {
+    async buildTeamMembers() {
         //following questions prompt the user to chose engineer, intern or finish building a team
-        return inquirer.prompt(this.questions()).then((response) => {
+        await inquirer.prompt(this.questions()).then(async (response) => {
             // console.log(response);
             if (response.teamMember === 'Finish building team') {
+                this.complete = true;
                 return;
             }
             
@@ -43,7 +47,7 @@ class Team {
             if (response.teamMember === 'Engineer') {
                 // new object for engineer
                 newTeamMember = new Engineer()
-                teamMembers = this.enginners
+                teamMembers = this.enginners;
                 //asking a user enginner questions 
             } else {
                 //create a new object for an intern 
@@ -52,16 +56,21 @@ class Team {
                 //prompting a user to answer intern questions 
             }
 
-            inquirer.prompt(newTeamMember.questions()).then((response) => {
+            inquirer.prompt(this.questions()).then((response) => {
                 newTeamMember.saveAnswers(response);
                 // console.log(response);
                 //adding a newly created engineer object to an array of engineers
-                teamMembers += newTeamMember;
+                teamMembers.push(newTeamMember);
                 // console.log(this.enginners);
-                return this.buildTeamMembers();
+                // return this.buildTeamMembers();
             });
             
         })
+        if (this.complete !== true) {
+            return this.buildTeamMembers();
+        }
+
+        return;
     }
 
     questions() {
