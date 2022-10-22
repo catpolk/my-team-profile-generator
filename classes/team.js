@@ -1,3 +1,4 @@
+const fs = require('fs');
 const inquirer = require('inquirer');
 
 const Manager = require('./manager');
@@ -8,8 +9,14 @@ const Intern = require('./intern');
 class Team {
     constructor(){
         this.manager = new Manager();
-        this.enginners = [];
-        this.interns = []; 
+        this.enginners = [
+            new Engineer(),
+            new Engineer(),
+        ];
+        this.interns = [
+            new Engineer(),
+            new Engineer(),
+        ]; 
     }
     
     async build() {
@@ -50,14 +57,12 @@ class Team {
             } else {
                 //create a new object for an intern 
                 newTeamMember = new Intern();
-                teamMembers = this.interns;
-                //prompting a user to answer intern questions 
+                teamMembers = this.interns; 
             }
 
             await inquirer.prompt(newTeamMember.questions()).then((response) => {
                 newTeamMember.saveAnswers(response);
                 // console.log(response);
-                //adding a newly created engineer object to an array of engineers
                 teamMembers.push(newTeamMember);
                 // console.log(this.enginners);
                 // return this.buildTeamMembers();
@@ -78,6 +83,10 @@ class Team {
                 choices: ["Engineer", "Intern", "Finish building team" ],
             },
         ]);
+    }
+
+    render() {
+
     }
 }
 

@@ -7,6 +7,10 @@ class Engineer  {
         this.git = git
     }
 
+    title() {
+        return 'TEst engineer';
+    }
+
     questions() {
         return ([ //returns questions
             {
@@ -14,16 +18,16 @@ class Engineer  {
                 name: 'title',
                 message: 'Enter engineer name'
             },
-            // {
-            //     type: 'input',
-            //     name: 'ID',
-            //     message: 'Enter engineer ID'
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'git',
-            //     message: 'Enter Github username'
-            // },
+            {
+                type: 'input',
+                name: 'ID',
+                message: 'Enter engineer ID'
+            },
+            {
+                type: 'input',
+                name: 'git',
+                message: 'Enter Github username'
+            },
         ]);
     }
 
