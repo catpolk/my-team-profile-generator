@@ -1,4 +1,4 @@
-const HTMLGenerator = require('./generateHTMLfile/HTMLGenerator')
+
 
 //require team members progiles 
 const Engineer = require('./classes/engineer');
@@ -24,6 +24,5 @@ function init() {
     // });
 
 }
-new HTMLGenerator(null).render();
 
 init();
