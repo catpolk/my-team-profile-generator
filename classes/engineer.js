@@ -17,21 +17,25 @@ class Engineer  {
         return "11"
     }
 
+    email(){
+        return "testiki@gmail.com"
+    }
+
     git(){
-        return 'gitgit'
+        return "gitgit"
     }
 
     render(){
         return `
             <div class="col-4" id="card-size">
                 <div class="card-header mt-5">
-                    <h2>${this.name}</h2>
+                    <h2>${this.name()}</h2>
                     <h3>Engineer</h3>
                 </div>
                 <div class="card-body">
-                    <p class="id">ID: ${this.id}</p>
-                    <p class="email">Email: <a href="mailto:${this.email}">${this.email}</a></p>
-                    <p class="github">Github: ${this.git} </p>
+                    <p class="id">ID: ${this.id()}</p>
+                    <p class="email">Email: <a href="mailto: ${this.email()}">${this.email()}</a></p>
+                    <p class="github">Github: ${this.git()} </p>
                 </div>
             </div> `; 
     }

@@ -128,8 +128,9 @@ class Team {
     renderBody(){
         return `
             <div class="row justify-content-center">
-                // ${this.manager.render()}
+                //{this.manager.render()}
                 ${this.engineer.render()}
+                ${this.intern.render()}
             </div>
         `;
     }
