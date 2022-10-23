@@ -9,6 +9,9 @@ const Intern = require('./intern');
 class Team {
     constructor(){
         this.manager = new Manager();
+        this.engineer = new Engineer();
+        this.intern = new Intern();
+
         this.enginners = [
             new Engineer(),
             new Engineer(),
@@ -95,7 +98,6 @@ class Team {
         );
     }
 
-
     renderHeader() {
         return `
             <!DOCTYPE html>
@@ -126,17 +128,8 @@ class Team {
     renderBody(){
         return `
             <div class="row justify-content-center">
-                <div class="col-4" id="card-size">
-                    <div class="card-header mt-5 ">
-                        <h2>Jared</h2>
-                        <h3><span class="material-icons-outlined"></span>Manager</h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="id">ID: 1</p>
-                        <p class="email">Email: <a href="mailto:cpolknytx@gmail.com">cpolknytx@gmail.com</a></p>
-                        <p class="office">Office Number: 1</p>
-                    </div>
-                </div>
+                // ${this.manager.render()}
+                ${this.engineer.render()}
             </div>
         `;
     }

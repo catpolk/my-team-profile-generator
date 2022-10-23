@@ -19,8 +19,7 @@ function init() {
     myTeam.render();
 
     // myTeam.build().then(() => {
-
-        // new HTMLGenerator(myTeam).render();
+    //     myTeam.render();
     // });
 
 }

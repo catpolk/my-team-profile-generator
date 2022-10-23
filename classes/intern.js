@@ -3,20 +3,33 @@ const Employee = require('./employee')
 class Intern  {
     answers;
     
-    title() {
+    name() {
         return 'TEst intern';
     }
+
+    id(){
+        return '111'
+    }
+
+    email(){
+        return 'testik@gmail.com'
+    }
+
+    school(){
+        return 'wkola'
+    }
+    
 
     questions() {
         return ([ //returns questions
             {
                 type: 'input',
-                name: 'title',
+                name: 'name',
                 message: 'Provide name of your intern'
             },
             {
                 type: 'input',
-                name: 'ID',
+                name: 'id',
                 message: 'Enter intern\'s ID'
             },
             {
