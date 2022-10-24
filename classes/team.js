@@ -9,17 +9,9 @@ const Intern = require('./intern');
 class Team {
     constructor(){
         this.manager = new Manager();
-        this.engineer = new Engineer();
-        this.intern = new Intern();
 
-        this.enginners = [
-            new Engineer(),
-            new Engineer(),
-        ];
-        this.interns = [
-            new Engineer(),
-            new Engineer(),
-        ]; 
+        this.engineers = [];
+        this.interns = []; 
     }
     
     async build() {
@@ -31,11 +23,6 @@ class Team {
         //prompts questions for manager and saves them in save Answers 
         await inquirer.prompt(this.manager.questions()).then((response) => {
             this.manager.saveAnswers(response);
-            // resolve();
-            // var fileContent = generateHTML(response);
-            // writeToFile('generateHTML.js', fileContent)
-            // console.log(this.manager.answers);
-            // this.buildTeamMembers();
         });
 
         return;
@@ -55,7 +42,7 @@ class Team {
             if (response.teamMember === 'Engineer') {
                 // new object for engineer
                 newTeamMember = new Engineer()
-                teamMembers = this.enginners;
+                teamMembers = this.engineers;
                 //asking a user enginner questions 
             } else {
                 //create a new object for an intern 
@@ -124,15 +111,22 @@ class Team {
                 <div class="container">
         `;
     }
-
+    
     renderBody(){
-        return `
-            <div class="row justify-content-center">
-                //{this.manager.render()}
-                ${this.engineer.render()}
-                ${this.intern.render()}
-            </div>
-        `;
+        const roster = [this.manager, ...this.engineers, ...this.interns]; 
+
+        let result = `<div class="row justify-content-center"> `;
+        
+        for(let i = 0; i < roster.length; i++){
+            result += roster[i].render();
+
+            if((i+1) % 3 == 0 && (i+1) !== roster.length){
+                result += `</div> <div class="row justify-content-center"> `;
+            } 
+        }
+        result += `</div>`;
+        
+        return result;
     }
 
     renderFooter(){

@@ -16,11 +16,9 @@ function writeToFile(fileName, data) {
 //function that initializes the app
 function init() {
     const myTeam = new Team();
-    myTeam.render();
-
-    // myTeam.build().then(() => {
-    //     myTeam.render();
-    // });
+    myTeam.build().then(() => {
+        myTeam.render();
+    });
 
 }
 
