@@ -1,8 +1,6 @@
 const Employee = require('./employee');
 
-class Manager  {
-    answers;
-
+class Manager extends Employee  {
     render() { 
         return `
              <div class="col-4" id="card-size">
@@ -19,32 +17,14 @@ class Manager  {
     }
 
     questions() {
-        return ([ //returns questions
-            {
-                type: 'input',
-                name: 'name',
-                message: 'Enter manager name'
-            },
-            {
-                type: 'input',
-                name: 'employeeID',
-                message: 'Enter employee ID'
-            },
-            {
-                type: 'input',
-                name: 'email',
-                message: 'Enter employee email address'
-            },
+        return [
+            ...super.questions(),
             {
                 type: 'input',
                 name: 'officeNumber',
-                message: 'Enter employee office number'
+                message: 'Enter office number'
             },
-        ]);
-    }
-
-    saveAnswers(ans) {
-        this.answers = ans;
+        ];
     }
 }
 

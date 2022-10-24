@@ -16,6 +16,11 @@ class Employee {
                 type: 'input',
                 name: 'id',
                 message: 'Enter ID:'
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Enter Email: '
             }
         ];
     }

@@ -1,8 +1,6 @@
 const Employee = require('./employee')
 
-class Intern  {
-    answers;
-
+class Intern extends Employee  {
     render(){
         return `
             <div class="col-4" id="card-size">
@@ -19,33 +17,14 @@ class Intern  {
     }
 
     questions() {
-        return ([ //returns questions
-            {
-                type: 'input',
-                name: 'name',
-                message: 'Provide name of your intern'
-            },
-            {
-                type: 'input',
-                name: 'id',
-                message: 'Enter intern\'s ID'
-            },
-            {
-                type: 'input',
-                name: 'email',
-                message: 'Enter intern\'s email address'
-            },
+        return [ 
+            ...super.questions(),
             {
                 type: 'input',
                 name: 'school',
                 message: 'Enter intern\'s school'
             },
-            
-        ]);
-    }
-
-    saveAnswers(ans) {
-        this.answers = ans;
+        ];
     }
 }
 

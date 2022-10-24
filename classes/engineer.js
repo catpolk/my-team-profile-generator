@@ -17,7 +17,7 @@ class Engineer extends Employee {
     }
 
     questions() {
-        return [ //returns questions
+        return [ 
             ...super.questions(),
             {
                 type: 'input',
@@ -28,5 +28,5 @@ class Engineer extends Employee {
     }
 } 
 
-//create a constructor 
+
 module.exports = Engineer;
