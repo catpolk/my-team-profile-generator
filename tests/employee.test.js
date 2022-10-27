@@ -9,8 +9,8 @@ describe("Employee", () => {
             const result = new Employee().questions(name);
 
             expect(result).toEqual(name);
-        })
-    })
+        });
+    });
 
         it("prompts a user to provide an id", () => {
             const id = 01;
@@ -18,7 +18,7 @@ describe("Employee", () => {
             const result = new Employee().questions(id);
 
             expext(result).toEqual(id);
-        })
+        });
 
         it("prompts a user to provide an email", () => {
             const email = "catherinetest@gmail.com";
@@ -26,6 +26,16 @@ describe("Employee", () => {
             const result = new Employee().questions(email);
 
             expect(result).toEqual(email);
-        })
+        });
 
-})
+    descrite("saveAnswers", () => {
+        it("saves answers provided by the user", () => {
+            const str = "saves answers";
+
+            const result = new Employee().saveAnswers(ans);
+
+            expect(result).toEqual(ans)
+        });
+    });
+
+});
