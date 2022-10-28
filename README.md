@@ -2,11 +2,6 @@
 
 ## Description
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
 - My motivation was to create an interactive application which potentially be useful fo rlarge companies and especially engineering teams. 
 
 - I built this project to offer an application which will allow an easier way to view team members' profiles. 
@@ -20,5 +15,6 @@
 Links: 
 
 Github: https://github.com/catpolk/my-team-profile-generator
+URL: https://catpolk.github.io/my-team-profile-generator/myTeam.html
 
 
