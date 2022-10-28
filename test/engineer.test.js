@@ -15,17 +15,37 @@ describe("Engineer", () => {
     });
     describe("render", () => {
         it("renders HTML  file"), () => {
-            //arrange 
-            const savedName = "Bob";
-            const renderedStr = `<h2>Engineer's name is ${savedName}</h2>`;
 
-            const obj = new Engineer(renderedStr);
+            const answer = {
+                name: "John",
+                id: 1,
+                email: "test1@gmail.com",
+                git: "catpolk"
+            };
+            
+            const renderedStr = 
+            `
+            <div class="col-4" id="card-size">
+                <div class="card-header mt-5">
+                    <h2>${answer.name}</h2>
+                    <h3>Engineer</h3>
+                </div>
+                <div class="card-body">
+                    <p class="id">ID: ${answer.id}</p>
+                    <p class="email">Email: <a href="mailto: ${answer.email}">${answer.email}</a></p>
+                    <p class="github">Github: ${answer.git} </p>
+                </div>
+            </div> 
+            `;
 
-            //act 
-            //assert
-            expect(obj.render()).toEqual(renderedStr);
+            const obj = new Engineer();
+            obj.saveAnswers(answer);
+
+
+            expect(obj.render()).toEqual(obj.saveAnswers(answer));
 
         }
     })
+
 
 });

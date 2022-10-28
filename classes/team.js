@@ -23,6 +23,7 @@ class Team {
         //prompts questions for manager and saves them in save Answers 
         await inquirer.prompt(this.manager.questions()).then((response) => {
             this.manager.saveAnswers(response);
+            console.log(response);
         });
 
         return;
