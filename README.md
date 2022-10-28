@@ -15,3 +15,10 @@
 
 - I learned OOP, inquirer and HTML rendering. 
 
+![screenshot of the application](./assets/images/Screen%20Shot%202022-10-28%20at%2011.53.01%20AM.png)
+
+Links: 
+
+Github: https://github.com/catpolk/my-team-profile-generator
+
+
