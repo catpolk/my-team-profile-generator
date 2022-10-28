@@ -17,4 +17,7 @@ Links:
 Github: https://github.com/catpolk/my-team-profile-generator
 URL: https://catpolk.github.io/my-team-profile-generator/myTeam.html
 
+Video google docs: https://drive.google.com/file/d/1qUB1P-Ta1lffU7I2o0kJM6HObzoiAwPd/view?usp=share_link
+
+
 
