@@ -1,9 +1,9 @@
 class Employee {
     answers;
 
-            saveAnswers(ans) {
-                this.answers = ans;
-            }
+    saveAnswers(ans) {
+        this.answers = ans;
+    }
 
     questions() {
         return [
