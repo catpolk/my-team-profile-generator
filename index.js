@@ -1,5 +1,3 @@
-
-
 //require team members progiles 
 const Engineer = require('./classes/engineer');
 const Intern = require('./classes/engineer');
@@ -13,7 +11,7 @@ function writeToFile(fileName, data) {
     );
 }
 
-//function that initializes the app
+//function that initializes Team class
 function init() {
     const myTeam = new Team();
     myTeam.build().then(() => {

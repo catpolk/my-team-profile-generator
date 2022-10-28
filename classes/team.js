@@ -23,7 +23,6 @@ class Team {
         //prompts questions for manager and saves them in save Answers 
         await inquirer.prompt(this.manager.questions()).then((response) => {
             this.manager.saveAnswers(response);
-            console.log(response);
         });
 
         return;
@@ -32,7 +31,6 @@ class Team {
     async buildTeamMembers() {
         //following questions prompt the user to chose engineer, intern or finish building a team
         await inquirer.prompt(this.questions()).then(async (response) => {
-            // console.log(response);
             if (response.teamMember === 'Finish building team') {
                 return;
             }
@@ -44,7 +42,6 @@ class Team {
                 // new object for engineer
                 newTeamMember = new Engineer()
                 teamMembers = this.engineers;
-                //asking a user enginner questions 
             } else {
                 //create a new object for an intern 
                 newTeamMember = new Intern();
@@ -53,10 +50,7 @@ class Team {
 
             await inquirer.prompt(newTeamMember.questions()).then((response) => {
                 newTeamMember.saveAnswers(response);
-                // console.log(response);
                 teamMembers.push(newTeamMember);
-                // console.log(this.enginners);
-                // return this.buildTeamMembers();
             });
 
             return this.buildTeamMembers();
