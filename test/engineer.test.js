@@ -14,7 +14,7 @@ describe("Engineer", () => {
         })
     });
     describe("render", () => {
-        it("renders HTML  file"), () => {
+        it("renders HTML  file", () => {
 
             const answer = {
                 name: "John",
@@ -35,17 +35,16 @@ describe("Engineer", () => {
                     <p class="email">Email: <a href="mailto: ${answer.email}">${answer.email}</a></p>
                     <p class="github">Github: ${answer.git} </p>
                 </div>
-            </div> 
-            `;
+            </div> `;
 
             const obj = new Engineer();
             obj.saveAnswers(answer);
 
 
-            expect(obj.render()).toEqual(obj.saveAnswers(answer));
+            expect(obj.render()).toEqual(renderedStr);
 
-        }
-    })
+        });
+    });
 
 
 });
